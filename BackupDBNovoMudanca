@@ -1,0 +1,1101 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 17.2
+-- Dumped by pg_dump version 17.2
+
+-- Started on 2024-12-16 20:35:33
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 4898 (class 0 OID 16904)
+-- Dependencies: 223
+-- Data for Name: cidade; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.cidade (nome, estado) FROM stdin;
+São Paulo	SP
+Rio de Janeiro	RJ
+Belo Horizonte	MG
+Farias	AP
+Camargo	SE
+Teixeira de Sá	TO
+Fernandes das Flores	TO
+Souza Grande	MA
+Moura	GO
+Martins	RS
+Sao Paulo	SP
+\.
+
+
+--
+-- TOC entry 4894 (class 0 OID 16857)
+-- Dependencies: 219
+-- Data for Name: clientes; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.clientes (codigo, cpf, rg, nomecompl, endereco) FROM stdin;
+1	12345678901	123456789	João Silva	Rua A, 123
+2	98765432100	234567890	Maria Oliveira	Rua B, 456
+3	23456789012	345678901	Carlos Souza	Av. Central, 789
+4	34567890123	456789012	Ana Costa	Rua D, 101
+5	45678901234	567890123	Pedro Almeida	Rua E, 202
+6	56789012345	678901234	Luana Ferreira	Av. Norte, 303
+7	67890123456	789012345	Felipe Martins	Rua F, 404
+8	78901234567	890123456	Cláudia Ramos	Av. Sul, 505
+9	89012345678	901234567	Ricardo Lima	Rua G, 606
+10	90123456789	012345678	Mariana Pinto	Av. Oeste, 707
+11	01234567890	112233445	Fernanda Rocha	Rua H, 808
+12	11223344556	223344556	Giovanni Silva	Rua I, 909
+13	22334455667	334455667	Isabela Costa	Rua J, 1010
+14	33445566778	445566778	Eduardo Souza	Rua K, 1111
+15	44556677889	556677889	Marcos Oliveira	Rua L, 1212
+16	55667788990	667788990	Gabriela Almeida	Rua M, 1313
+17	66778899001	778899001	Renato Pereira	Rua N, 1414
+18	77889900112	889900112	Sandra Lima	Rua O, 1515
+19	88990011223	990011223	Flávio Costa	Rua P, 1616
+20	99001122334	001122334	Fernanda Alves	Rua Q, 1717
+21	40672153980	495273893	Letícia da Luz	Feira Vieira, 47\nVila Mangueiras\n60555646 Rocha do Galho / AM
+22	16459730261	785049428	Oliver Nascimento	Setor Luigi Pinto\nComiteco\n03169-390 Ribeiro / AP
+23	59173046299	109927740	Eduardo Machado	Loteamento Juliana da Rocha, 70\nVila Batik\n51184898 Aragão / ES
+24	68205413762	583217696	Rebeca da Costa	Praça Castro, 61\nMirtes\n18610998 Mendes de Minas / MT
+25	69135482737	493477922	Eduarda Câmara	Aeroporto Novaes\nVila Suzana Primeira Seção\n49921-777 Costa / MA
+26	95827431664	698643281	Julia Cunha	Morro de Gonçalves, 19\nJoão Paulo Ii\n10426-683 Albuquerque Alegre / GO
+27	17806943501	335510110	Ísis Alves	Feira Maria Eduarda Fonseca, 70\nCruzeiro\n37269-727 da Paz Grande / SP
+28	49386017296	639174699	Ágatha Vieira	Esplanada Rodrigues, 88\nPaquetá\n34150659 Moura de Aragão / SC
+29	82469350115	531297505	Brenda Sá	Área de Cunha\nConjunto Floramar\n78178535 Gomes do Amparo / AP
+30	81702456994	130172520	Eloá Brito	Pátio de Campos, 2\nMorro Dos Macacos\n73159870 Rios / MA
+31	27658134007	537555246	Joana Moreira	Trevo Nunes, 210\nSilveira\n54391-933 Gomes do Galho / AP
+32	72863905112	573359508	Miguel da Mata	Viaduto Souza, 6\nVenda Nova\n43233-947 Vargas / PA
+33	26458371071	708003734	Luigi Oliveira	Trecho de Oliveira, 79\nMadri\n42250652 Vasconcelos da Serra / PI
+34	03578942600	798907204	Pedro Henrique Silveira	Lago de Teixeira, 36\nVila Nossa Senhora Do Rosário\n03626050 Guerra Alegre / RJ
+35	46302187508	393534978	Sr. Luiz Otávio Monteiro	Travessa Fonseca, 1\nVila Nova\n84963-303 da Luz da Mata / SE
+36	87150326986	213370874	Luiz Henrique Castro	Via Vieira, 59\nFazendinha\n27999-078 Casa Grande de Vieira / SC
+37	87264951049	310492986	Sra. Isabelly Correia	Praia Costela, 21\nPaquetá\n53790-808 Monteiro / RO
+38	09843162722	786430257	Gael Henrique Guerra	Travessa de da Cunha\nMinas Brasil\n26651701 Mendonça / RO
+39	59641382764	317254788	Benjamin Cunha	Recanto de da Conceição, 23\nNossa Senhora De Fátima\n48228581 da Conceição / MG
+40	28095173479	382866432	Davi Lucca Cassiano	Alameda Jesus, 42\nJardim América\n47865-596 Cirino de da Conceição / ES
+41	54067913206	310049092	Diego Moraes	Ladeira de Rios, 44\nAndiroba\n56852945 Melo / SE
+42	67145903261	51338810	Sr. Marcelo Cunha	Jardim de Rezende\nPilar\n72399-134 da Mata / MS
+43	32048679196	151008550	Vinícius Azevedo	Recanto de Dias\nVila Da Paz\n67739930 Mendes de Almeida / MT
+44	15763948246	20321647	Mathias da Cunha	Passarela de Barros, 72\nÁlvaro Camargos\n24298174 Aparecida de Pinto / BA
+45	38260715902	128000798	Maria Flor Monteiro	Aeroporto João Vitor Silva, 88\nMiramar\n19125194 da Rosa / BA
+46	09482563115	498163083	Emilly Novais	Largo de Ribeiro, 151\nVila Santa Monica 1ª Seção\n76894947 Castro Alegre / PA
+47	17902834505	777045387	Hellena Sá	Conjunto Pastor, 6\nCaiçara - Adelaide\n66330820 Garcia da Prata / TO
+48	94537206829	760966053	Eloá Rezende	Via Viana, 10\nNova Pampulha\n33522-133 Duarte da Prata / AP
+49	52197046306	814883674	Rebeca Silva	Chácara de Marques, 8\nBuraco Quente\n14806-841 Pastor de Novaes / ES
+50	47531209616	347267189	Maria Sophia da Rocha	Fazenda de Rios, 21\nVila São Paulo\n33615054 Novaes de Minas / PB
+51	42793018678	175850606	Emilly Pimenta	Praça Pacheco, 23\nNova Floresta\n37921-912 Vieira de Fernandes / TO
+52	91275648355	462192711	Lorenzo Montenegro	Rodovia Erick Pereira, 6\nNovo Santa Cecilia\n94706974 Pastor / AM
+53	58319270405	909562867	Igor Borges	Distrito Emanuella Carvalho, 648\nVila Nova Dos Milionarios\n94623-435 Moraes / AP
+54	73814062922	176764168	Maria Rodrigues	Esplanada Santos, 62\nNovo Ouro Preto\n17065-330 Cavalcanti de Goiás / AM
+55	24860315707	503704675	Davi Santos	Fazenda Vitor Hugo Peixoto, 2\nAcaiaca\n04204736 Sampaio / SC
+56	52403618780	930131462	Isaque Vargas	Chácara Jesus, 9\nMarieta 2ª Seção\n18338-006 Nascimento de Minas / MG
+57	96251370416	293839162	Alice Nogueira	Estrada Pastor\nVila Atila De Paiva\n14460-506 Correia / RJ
+58	05987326168	464898543	Yan Câmara	Loteamento da Cunha, 90\nVila Independencia 1ª Seção\n32863-313 Peixoto / PE
+59	53908214670	659510512	Bárbara Almeida	Feira Leandro Teixeira, 79\nVila Madre Gertrudes 2ª Seção\n45064-224 Melo / RR
+60	27598304629	985073275	Dra. Isadora Barros	Aeroporto Vasconcelos\nPrimeiro De Maio\n32172-908 Vieira do Oeste / PB
+61	69251807302	841850398	Natália Correia	Estrada de Aragão\nVila Aeroporto Jaraguá\n42285-945 Pereira da Serra / PI
+62	35129478673	913670431	Ian Pacheco	Avenida Lucca Caldeira, 72\nBela Vitoria\n93902-550 Lopes / GO
+63	86035274900	393823936	Lorena Rezende	Núcleo de Leão\nBela Vitoria\n38225-770 Dias / MA
+64	13960872577	470359364	Dra. Maria Julia Souza	Praia de Cardoso, 42\nSanta Inês\n11652854 Freitas / GO
+65	75091326499	701514776	Maria Fernanda Machado	Trevo Miguel Alves, 59\nVila Sumaré\n51232396 Albuquerque de Pires / MA
+66	70935812423	851022143	Vitor Abreu	Rua Aparecida, 65\nVila Cemig\n84554-065 Aragão de Pimenta / PR
+67	18752906485	825379970	Alice Jesus	Área Bryan Rocha, 81\nMaria Virgínia\n82250545 Sales / RS
+68	41785203690	575285485	Danilo Oliveira	Esplanada Theo Garcia, 471\nNova America\n84857-013 Albuquerque das Pedras / RJ
+69	94502831760	360720915	Eloah Pacheco	Estrada Maria Sophia Marques, 27\nFlavio Marques Lisboa\n46692191 Macedo das Pedras / MA
+70	49261873022	765708001	Sr. Rafael Pimenta	Núcleo Melo, 4\nVila Cloris\n22902-323 Melo / BA
+71	95084231615	795887944	Caleb Castro	Alameda Sabrina Pimenta, 982\nSão Sebastião\n20652-980 Pires / AC
+72	60491328796	517818051	Dra. Maysa Martins	Rodovia de Barbosa, 322\nSão Luiz\n28546142 Moura de Minas / MA
+73	95601482730	386918429	Hadassa Cavalcante	Lagoa de Farias, 56\nAdemar Maldonado\n80340557 Pinto das Pedras / PB
+74	09274651830	533110414	Beatriz Monteiro	Rua Aparecida, 5\nBeira Linha\n87323-116 da Cunha de Sampaio / TO
+75	03562497865	709515667	Oliver Lima	Praça de Pastor, 29\nNovo Ouro Preto\n87960-146 Cunha da Prata / AM
+76	70834516217	346439446	Francisco da Mata	Pátio de Moura, 7\nIpe\n81898155 da Luz / RO
+77	25749061361	904506202	Milena da Paz	Morro de Camargo, 639\nHeliopolis\n31923-611 Pereira da Mata / PI
+78	42091378550	741111587	Stella Albuquerque	Avenida Casa Grande, 22\nAmbrosina\n56192-928 Castro / RS
+79	17846920340	234762623	Miguel Costa	Passarela Cunha, 839\nBarão Homem De Melo 2ª Seção\n22463-387 da Rosa do Amparo / SP
+80	83604791510	240366021	Liam Guerra	Praia de Vargas, 9\nVila Madre Gertrudes 2ª Seção\n05159309 da Conceição das Flores / AL
+81	51708324607	272110811	Pietro da Mota	Sítio Bryan da Paz, 96\nHorto\n78532403 da Costa do Campo / SE
+82	25013869498	738473046	Olivia Cirino	Colônia de da Cunha, 245\nMarilandia\n80705-136 Cavalcante do Norte / RS
+83	51670392821	860733871	Josué Castro	Conjunto de Abreu, 43\nMaria Virgínia\n05831-827 Caldeira / RN
+84	86720459392	783922600	Bárbara Pires	Viela Fernandes, 16\nNova Floresta\n45054-098 Sá / AL
+85	63298475173	528220341	Arthur Moura	Colônia Isabela da Luz, 8\nSão Damião\n99051-434 Cavalcante da Serra / SE
+86	73690218403	924541167	Sophie Machado	Lago Eloá da Rocha, 885\nSanto Antônio\n23418023 Caldeira / RR
+87	41379820588	395612975	Danilo Moraes	Viaduto Viana, 53\nSão Jorge 1ª Seção\n83878-480 Lopes das Pedras / PI
+88	36845902747	726827480	Bento Marques	Loteamento Pimenta\nJoão Paulo Ii\n81038474 Souza / RN
+89	43725908656	341546077	Sr. João Miguel Rodrigues	Praia de Fernandes\nDom Bosco\n89984422 Borges de Freitas / ES
+90	47936128573	694451785	Laura Fernandes	Setor Luiz Miguel da Rosa\nVila Canto Do Sabiá\n15585168 Machado do Campo / TO
+91	67401592380	510517549	Gabriel Cavalcante	Morro de Machado, 23\nTiradentes\n20989535 Câmara / MA
+92	08672394178	90452418	Luiz Henrique Dias	Ladeira Gabriel Monteiro, 5\nSanto Agostinho\n59068-373 Fernandes / DF
+93	63245908792	618519294	Vinicius Moura	Trecho de Siqueira, 34\nCasa Branca\n20303662 Dias / AP
+94	90635421860	282157710	André Moura	Praia Mirella das Neves, 58\nUrca\n60873745 Montenegro de Oliveira / RN
+95	57049632180	194865420	Lucca Macedo	Estação Beatriz Viana, 355\nEsplanada\n36441-195 Costa / RS
+96	15094367234	471215615	Isaac Macedo	Favela de Novais\nDiamante\n07639362 Ribeiro / RO
+97	29453861006	781604344	Fernanda Sales	Passarela Campos, 1\nEngenho Nogueira\n27155599 da Luz / RJ
+98	62035891795	441676736	Dr. Enrico Oliveira	Condomínio Alves, 5\nMinas Caixa\n26074487 Cavalcanti / DF
+99	13782460987	466757767	Josué da Paz	Feira Juliana Cassiano\nCarmo\n27559-877 Lima / SC
+100	61349820750	992648418	Maria Alice Moura	Rodovia de Rodrigues, 4\nJardim Atlântico\n35911-933 Ribeiro Verde / AC
+101	71685240380	792168269	Cecilia Novaes	Setor Letícia Sampaio, 484\nSão Damião\n63265-575 Moura da Prata / MG
+102	06573428153	607877677	Gustavo Gomes	Rodovia Dias, 827\nVila Antena Montanhês\n96607-177 Azevedo / PB
+103	73180546271	185847920	Ana Lívia Azevedo	Rodovia Nathan Lopes, 2\nVila Jardim Leblon\n23899-402 Sousa / BA
+104	12687539040	829817053	Davi Miguel Araújo	Residencial Valentina Mendes, 850\nJoão Pinheiro\n00911-232 Abreu / MG
+105	96815702359	429562053	Ana Luiza da Rocha	Vila Ferreira, 469\nAlto Vera Cruz\n54937721 Pinto / TO
+106	41398067296	331229294	Pedro Lucas Pereira	Jardim Aparecida, 966\nMadre Gertrudes\n89191-174 Moraes / AM
+107	94763152025	636097090	Dra. Caroline Fogaça	Jardim Isabelly Ribeiro, 10\nConjunto Lagoa\n68260-063 Lopes / SE
+108	64102389750	177975300	Vicente Duarte	Trevo Catarina da Mota, 57\nDom Silverio\n75846-755 Cardoso do Sul / PR
+109	69045823160	988654643	Caio Aragão	Praia de Mendonça, 803\nApolonia\n82292514 das Neves / MA
+110	39428517682	691411021	Olivia Duarte	Colônia de Borges, 29\nColégio Batista\n98514356 Leão de Minas / PB
+111	62857913419	333152812	José Miguel Sousa	Estação de Melo, 356\nBeira Linha\n48364-581 Dias / AM
+112	91763582400	823813968	Carlos Eduardo Pereira	Rodovia de Alves, 52\nIndaiá\n39310615 Silveira das Pedras / PE
+113	36275019425	959692291	Dr. Ian Rios	Travessa Cavalcanti, 69\nBarreiro\n85712140 da Conceição de Fogaça / PB
+114	47190632506	567760338	João Guilherme Pimenta	Aeroporto de Rios, 40\nSanta Efigênia\n27222-589 da Rocha de Rocha / DF
+115	85637049157	522464351	Juan Vieira	Rodovia Vieira, 83\nConfisco\n81124-956 Barros de Oliveira / AM
+116	69534208710	74083614	Lara Pires	Feira Andrade, 31\nSport Club\n04781-526 Pacheco Alegre / TO
+117	65307841957	129073174	Srta. Yasmin Andrade	Fazenda Silva, 2\nVarzea Da Palma\n26073-940 da Mota / MS
+118	39521760443	318751573	Benicio Azevedo	Trecho de Siqueira\nVila Suzana Primeira Seção\n89887773 Rezende / PB
+119	58904763274	110144589	Pedro Henrique Gonçalves	Parque de Dias, 94\nVista Do Sol\n98569769 Monteiro / DF
+120	23864175909	93788697	Bianca Martins	Via Henrique Azevedo, 621\nSão Bernardo\n49890-368 Barbosa do Oeste / DF
+121	01594627380	164211033	Levi Silva	Pátio Ana Julia Moraes, 20\nConjunto Jardim Filadélfia\n60112-649 Barbosa da Serra / PI
+122	50321768930	566791480	Samuel Camargo	Fazenda Montenegro, 65\nLajedo\n07787-917 Brito de Siqueira / MT
+123	25791304897	126062183	Larissa Aragão	Praia de Castro, 96\nIpiranga\n98874935 Pereira da Mata / RJ
+124	02718639431	90918445	Lorena Alves	Viela de Vieira\nSão Bento\n63434786 Marques da Serra / MA
+125	69354270107	399292126	Anthony Azevedo	Vereda de Barros, 544\nEstrela\n54501491 Costa dos Dourados / RR
+126	96824370592	595509264	Liz Moreira	Área Guerra, 19\nBoa Vista\n57667-059 Moraes Verde / MT
+127	21748560344	650553239	Maria Fernanda Gomes	Praça de Montenegro, 17\nVila Madre Gertrudes 2ª Seção\n79256-052 Sá / AL
+128	32856190740	245805202	Lorenzo Cunha	Rodovia de Vieira, 17\nVila Antena\n61547806 Rodrigues / SP
+129	37650821471	709764216	Ana Julia Lima	Favela de Brito, 31\nVila Betânia\n29048639 Pimenta do Amparo / CE
+130	40519238788	341115998	Liz Brito	Lagoa Mariah da Cunha, 12\nVila Nova Gameleira 2ª Seção\n05005-208 Costela da Serra / SP
+131	93268104533	315657450	Enzo Brito	Praia de Mendonça, 2\nUnidas\n99562254 Camargo das Flores / SC
+132	59087461267	845239085	Emanuel Alves	Vale das Neves, 4\nTirol\n47356-453 Mendes de Minas / AC
+133	02781356417	88324611	Sra. Luísa Moura	Vereda Elisa Sales, 52\nMaria Tereza\n56096826 Santos / RJ
+134	29035784600	842339218	Julia Alves	Feira Vitória Barros, 86\nEsplanada\n38899678 Lopes / PR
+135	79851406201	20317136	Laís Barbosa	Lago de da Costa, 11\nDas Industrias I\n33376-679 Lopes do Amparo / RJ
+136	65023871444	330444619	Ravi Marques	Alameda Maria Alice Freitas, 8\nPedreira Padro Lopes\n03825803 Guerra / RR
+137	69830174204	617281645	Henry Ferreira	Recanto Luiz Felipe Santos, 286\nFazendinha\n34779884 Mendonça / ES
+138	40371598214	662694692	Maria Rodrigues	Conjunto Olívia Moura, 56\nSanta Efigênia\n17870-727 Nunes do Campo / SC
+139	14329076543	940769611	Cecília da Cunha	Chácara Gomes, 699\nPrimeiro De Maio\n64953-997 Pimenta / AC
+\.
+
+
+--
+-- TOC entry 4897 (class 0 OID 16899)
+-- Dependencies: 222
+-- Data for Name: empresa; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.empresa (id, nome, endereco, nomecidade) FROM stdin;
+1	Mudanças XYZ	Av. Principal, 456	São Paulo
+2	Mudanças ABC	Rua Secundária, 789	Rio de Janeiro
+3	Mudancas XYZ	Av Principal 456	Sao Paulo
+4	Mudancas ABC	Rua Secundaria 789	Rio de Janeiro
+5	Mudancas - EI	Rua illum 222	Rio de Janeiro
+8	Mudancas S/A	Rua ad 790	Belo Horizonte
+9	Mudancas e Filhos	Rua maiores 180	Sao Paulo
+10	Mudancas XYZ	Av Principal 456	Sao Paulo
+11	Mudancas ABC	Rua Secundaria 789	Rio de Janeiro
+12	Mudancas e Filhos	Rua autem 606	Sao Paulo
+13	Mudancas e Filhos	Rua maxime 181	Belo Horizonte
+14	Mudancas S/A	Rua minima 345	Sao Paulo
+15	Mudancas S/A	Rua consectetur 577	Belo Horizonte
+16	Mudancas S.A.	Rua fugit 999	Belo Horizonte
+17	Mudancas - EI	Rua ratione 292	Belo Horizonte
+18	Mudancas S/A	Rua impedit 214	Belo Horizonte
+19	Mudancas S.A.	Rua neque 998	Sao Paulo
+\.
+
+
+--
+-- TOC entry 4900 (class 0 OID 16970)
+-- Dependencies: 225
+-- Data for Name: funcionario; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.funcionario (id, id_empresa, nome, sobrenome, cargo, salario, data_admissao) FROM stdin;
+1	1	João	Silva	Motorista	3000.00	2020-01-15
+2	1	Maria	Oliveira	Gerente	4500.00	2019-06-10
+3	2	Carlos	Souza	Assistente Administrativo	2500.00	2021-03-20
+4	2	Ana	Costa	Motorista	3200.00	2018-08-25
+5	1	Pedro	Almeida	Coordenador de Operações	4000.00	2017-12-05
+6	2	Luana	Ferreira	Analista de Logística	3500.00	2022-05-15
+7	1	Felipe	Martins	Assistente de Campo	2800.00	2023-01-10
+8	2	Cláudia	Ramos	Coordenadora de Frota	3800.00	2020-09-17
+9	1	Ricardo	Lima	Supervisor de Transporte	4200.00	2016-07-01
+10	2	Mariana	Pinto	Analista Financeira	3400.00	2019-11-11
+11	3	Isaque	Nogueira	Assistente de Campo	3384.63	2024-06-05
+12	5	Pedro Miguel	Casa Grande	Analista Financeira	3160.16	2019-04-02
+13	2	Mirella	Ferreira	Assistente de Campo	4866.15	2019-12-28
+14	9	Vitor	Caldeira	Coordenador de Operacoes	4783.64	2023-08-26
+15	1	Mateus	Sales	Assistente Administrativo	4398.66	2020-09-22
+16	8	Maria Fernanda	Sampaio	Coordenador de Operacoes	4518.31	2021-04-01
+17	5	Laura	Borges	Motorista	4046.76	2016-11-12
+18	1	Bella	Pires	Gerente	4165.07	2021-12-05
+19	1	Benjamim	Oliveira	Motorista	4361.52	2019-01-05
+20	4	João Vitor	Silva	Coordenadora de Frota	4484.66	2019-04-06
+21	9	Mariah	Gomes	Analista Financeira	2905.48	2021-09-13
+22	8	Vitória	Machado	Gerente	2729.19	2016-08-29
+23	2	Heloísa	Andrade	Assistente Administrativo	4963.70	2024-08-23
+24	4	Gustavo Henrique	Campos	Analista de Logistica	4897.50	2019-05-13
+25	4	Samuel	da Costa	Analista de Logistica	3400.69	2024-01-30
+26	4	Sophie	Silva	Assistente Administrativo	3617.36	2018-03-09
+27	3	João	Campos	Analista de Logistica	4119.14	2015-06-06
+28	9	Heitor	Moraes	Analista de Logistica	3961.81	2022-06-28
+29	3	Luiz Miguel	da Costa	Coordenador de Operacoes	3090.38	2022-08-29
+30	4	Maria Laura	Fogaça	Assistente Administrativo	4285.58	2016-10-11
+\.
+
+
+--
+-- TOC entry 4895 (class 0 OID 16866)
+-- Dependencies: 220
+-- Data for Name: pedido; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.pedido (codigo, id_cliente, precototal, id_empresa) FROM stdin;
+1	1	750.00	1
+2	2	1200.00	1
+4	4	300.00	2
+6	1	850.00	2
+7	2	950.00	1
+8	3	1200.00	1
+9	4	700.00	2
+11	1	600.00	1
+12	2	650.00	2
+13	3	1000.00	2
+14	4	850.00	2
+15	5	500.00	2
+20	10	750.00	2
+3	3	1000.00	1
+5	5	200.00	1
+10	5	900.00	1
+16	6	700.00	2
+17	7	1200.00	1
+18	8	1100.00	2
+19	9	450.00	2
+21	139	7527.41	12
+22	28	6581.27	16
+23	67	2323.40	8
+24	33	3223.66	13
+25	52	8120.30	18
+26	94	9417.02	2
+27	4	7865.93	10
+28	131	3256.77	2
+29	80	2216.43	8
+30	32	7353.14	15
+31	11	1381.87	16
+32	73	9611.88	8
+33	77	1630.13	11
+34	39	7371.84	2
+35	52	4935.30	9
+36	108	9476.90	10
+37	122	7517.05	14
+38	39	4809.59	8
+39	106	4780.64	4
+40	75	9564.72	16
+41	10	1979.28	11
+42	131	5935.82	16
+43	6	8069.75	11
+44	117	9407.29	19
+45	77	1844.29	2
+46	68	3917.32	5
+47	92	9128.97	1
+48	84	6189.84	1
+49	120	6127.00	10
+50	88	7233.35	10
+51	107	827.65	8
+52	105	2795.28	9
+53	137	9441.48	16
+54	137	6846.08	8
+55	127	8997.42	8
+56	62	2503.03	8
+57	126	6798.73	17
+58	11	6026.42	13
+59	60	9554.91	10
+60	104	6179.66	4
+61	137	4682.36	2
+62	104	7493.60	18
+63	17	6214.46	11
+64	134	6257.39	1
+65	90	8631.43	13
+66	127	3214.97	3
+67	18	8976.17	9
+68	67	8121.76	11
+69	12	4636.44	19
+70	43	8576.28	3
+71	42	9391.10	8
+72	101	5990.91	12
+73	74	8024.69	3
+74	28	7082.22	2
+75	101	1251.01	13
+76	50	7856.91	15
+77	52	6142.72	18
+78	22	4145.57	13
+79	89	2414.30	17
+80	41	3428.01	10
+81	89	5332.60	11
+82	91	2931.20	5
+83	71	8963.26	15
+84	40	1816.89	4
+85	45	9447.63	5
+86	4	9405.45	19
+87	114	7213.12	5
+88	47	2466.73	14
+89	41	3570.65	8
+90	128	6163.86	11
+91	84	4024.24	2
+92	49	6885.85	14
+93	120	9318.73	15
+94	66	3714.42	14
+95	101	8606.06	3
+96	103	3087.34	12
+97	119	6434.06	18
+98	56	2686.91	11
+99	122	1459.72	9
+100	44	2306.75	16
+101	27	1043.57	14
+102	79	8857.97	11
+103	118	4266.42	11
+104	13	8680.02	3
+105	118	1556.97	16
+106	112	6980.81	1
+107	124	7777.79	14
+108	42	5253.34	16
+109	48	8095.24	12
+110	97	3593.48	9
+111	40	6715.86	8
+112	16	5046.76	14
+113	122	7979.53	9
+114	118	6747.51	5
+115	12	2691.24	19
+116	12	2014.99	19
+117	5	9418.19	11
+118	14	7916.94	19
+119	116	1294.75	10
+120	128	1060.68	17
+121	69	2194.24	8
+122	21	8010.92	9
+123	17	4201.43	4
+124	129	4736.38	16
+125	15	2685.23	5
+126	28	7424.05	4
+127	104	8314.61	15
+128	42	5373.71	14
+129	96	3198.13	2
+130	45	8701.88	13
+131	64	6914.60	13
+132	48	1343.95	1
+133	10	828.60	9
+134	96	9430.29	18
+135	113	2288.68	14
+136	129	1394.00	4
+137	121	8829.85	14
+138	13	1570.29	18
+139	11	6363.12	12
+140	37	5595.87	17
+141	110	2051.98	17
+142	137	3149.02	17
+143	121	8420.22	1
+144	18	2136.36	14
+145	105	6284.87	15
+146	77	9984.00	4
+147	110	2552.26	17
+148	72	7966.68	12
+149	17	6215.20	19
+150	138	7162.45	13
+151	35	1107.55	1
+152	60	2342.79	19
+153	118	7592.04	1
+154	122	1162.87	4
+155	125	1201.44	11
+156	111	1767.04	12
+157	23	1991.30	13
+158	130	9255.53	8
+159	61	6248.65	3
+160	94	9397.78	17
+161	137	1811.41	1
+162	20	4778.94	19
+163	63	4913.04	18
+164	65	6655.77	5
+165	6	1466.41	11
+166	6	696.00	4
+167	28	1150.44	11
+168	27	7310.18	8
+169	21	6052.81	13
+170	22	6721.56	15
+171	123	3404.02	19
+172	1	3761.12	10
+173	135	7943.83	5
+174	36	3783.95	2
+175	25	8386.40	10
+176	17	7224.90	16
+177	33	4788.76	14
+178	61	2382.34	14
+179	60	9994.62	8
+180	65	3653.80	17
+181	32	8148.96	11
+182	12	8866.74	4
+183	84	4608.38	15
+184	84	2010.09	12
+185	131	2307.28	18
+186	80	2145.31	14
+187	38	6065.96	15
+188	79	6331.30	18
+189	115	4004.14	5
+190	26	1302.63	18
+191	107	7786.83	16
+192	90	8370.39	10
+193	25	4814.41	13
+194	112	3328.45	13
+195	35	9868.40	17
+196	57	2007.35	19
+197	59	3242.70	18
+198	126	8660.82	9
+199	69	8090.95	12
+200	114	6001.57	2
+201	131	8067.12	12
+202	119	9888.20	13
+203	49	4712.08	1
+204	43	8837.72	3
+205	75	3395.14	9
+206	134	1523.82	4
+207	29	2945.39	19
+208	117	9374.71	17
+209	36	926.41	12
+210	119	5745.84	2
+211	126	843.33	18
+212	49	5942.66	10
+213	127	745.75	13
+214	25	727.97	11
+215	89	2013.72	1
+216	106	5944.54	11
+217	56	6151.13	1
+218	35	3232.79	15
+219	47	8194.53	9
+220	42	8155.88	10
+221	20	2400.70	12
+222	3	8467.98	2
+223	106	6402.79	15
+224	82	2224.87	9
+225	83	1278.45	1
+226	43	4584.99	1
+227	25	9753.77	15
+228	95	904.98	14
+229	125	8344.75	2
+230	138	6731.61	3
+231	124	9983.30	17
+232	26	2138.84	16
+233	108	3560.30	3
+234	67	4060.89	12
+235	72	4519.75	13
+236	95	1934.28	13
+237	42	3015.01	15
+238	21	6545.79	4
+239	83	829.31	15
+240	24	6909.41	18
+241	1	2012.04	2
+242	40	6734.91	14
+243	122	8723.44	11
+244	67	7332.72	12
+245	129	9015.71	9
+246	28	829.72	5
+247	39	8267.63	5
+248	101	7620.87	9
+249	120	5049.85	3
+250	121	2246.23	15
+251	66	3561.21	17
+252	17	670.08	13
+253	81	9717.46	11
+254	9	4931.24	11
+255	36	6262.42	15
+256	6	4246.22	17
+257	41	2698.94	5
+258	130	3029.01	11
+259	65	9552.99	13
+260	38	7139.40	19
+261	12	6802.06	9
+262	72	9422.52	16
+263	120	2613.49	17
+264	42	9355.63	17
+265	25	4729.78	11
+266	39	4385.75	10
+267	55	1555.30	13
+268	131	7155.01	16
+269	31	8981.72	10
+270	72	6892.35	19
+271	17	3311.19	12
+272	139	2289.41	17
+273	113	1851.28	15
+274	56	9339.39	13
+275	97	6427.38	10
+276	109	8669.71	12
+277	82	6754.59	18
+278	11	7960.93	17
+279	104	5890.18	12
+280	49	6331.50	4
+281	6	9914.13	17
+282	109	7825.93	16
+283	59	2390.57	11
+284	72	6186.40	1
+285	26	8992.85	12
+286	28	7101.06	14
+287	98	8751.50	12
+288	23	8927.14	14
+289	29	8639.59	5
+290	87	4345.67	9
+291	63	7255.57	15
+292	14	4088.30	19
+293	109	8894.82	10
+294	43	573.40	11
+295	33	6280.82	19
+296	114	4500.01	16
+297	24	5055.87	4
+298	84	1614.16	17
+299	37	9482.50	2
+300	101	6432.02	11
+301	12	578.88	3
+302	102	3383.67	15
+303	55	2221.75	9
+304	98	7898.95	4
+305	104	3994.07	15
+306	47	7762.11	2
+307	65	6467.09	2
+308	21	9161.98	1
+309	56	2515.01	12
+310	3	4941.16	16
+311	73	6815.60	17
+312	11	4301.72	18
+313	95	2679.76	19
+314	129	1667.65	2
+315	2	4154.52	18
+316	15	8943.22	17
+317	39	8870.18	10
+318	102	4734.30	19
+319	87	1295.59	8
+320	94	5635.12	11
+321	50	4077.82	11
+322	95	1660.80	4
+323	134	3548.08	5
+324	117	9796.27	8
+325	131	7211.39	9
+326	112	9069.25	11
+327	63	9376.76	12
+328	54	5781.59	19
+329	6	5388.43	9
+330	41	2740.21	11
+331	68	6409.42	8
+332	10	2744.74	1
+333	107	9642.55	9
+334	47	5652.61	16
+335	116	2898.34	13
+336	18	8910.83	1
+337	125	4477.87	17
+338	21	8656.41	17
+339	26	8186.98	12
+340	99	8689.77	17
+341	126	1283.19	10
+342	123	2183.16	9
+343	4	4398.88	12
+344	125	2311.87	18
+345	127	2024.25	10
+346	83	1093.65	5
+347	77	1184.37	8
+348	38	5124.57	2
+349	41	839.24	3
+350	58	4641.00	10
+351	119	2739.82	12
+352	14	7860.12	13
+353	10	8135.19	17
+354	88	9744.53	15
+355	119	974.19	4
+356	46	615.23	3
+357	58	5081.71	8
+358	102	8527.01	5
+359	110	7098.45	18
+360	123	2686.76	1
+361	118	7428.35	19
+362	48	5179.62	1
+363	81	1912.38	12
+364	96	4188.49	16
+365	56	6320.25	14
+366	100	9188.37	11
+367	133	539.31	3
+368	124	4443.91	10
+369	98	6380.97	1
+370	121	3114.73	12
+371	27	3531.82	1
+372	75	5432.00	9
+373	12	9095.22	13
+374	45	7805.78	12
+375	67	1710.70	19
+376	40	2733.58	18
+377	38	1334.11	17
+378	134	7707.30	14
+379	42	4391.70	4
+\.
+
+
+--
+-- TOC entry 4892 (class 0 OID 16840)
+-- Dependencies: 217
+-- Data for Name: tiposervico; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.tiposervico (id_tipo, descricao) FROM stdin;
+1	Transporte
+2	Guindaste
+3	Montagem
+4	Desmontagem
+5	Mudanca Residencial
+6	Mudanca Comercial
+7	Transporte de Carga
+8	Guindaste
+9	Armazenamento Temporario
+10	Embalagem e Transporte
+11	Transporte Especial
+12	Servico de Logistica
+13	Recolhimento de Materiais
+14	Despacho e Entrega
+\.
+
+
+--
+-- TOC entry 4893 (class 0 OID 16845)
+-- Dependencies: 218
+-- Data for Name: servicos; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.servicos (nome, tempodurac, preco, id_tipo) FROM stdin;
+Transporte A	5	150.00	1
+Transporte B	3	100.00	1
+Guindaste C	2	300.00	2
+Guindaste D	4	400.00	2
+Montagem E	6	200.00	3
+Montagem F	2	250.00	3
+Desmontagem G	4	250.00	4
+Desmontagem H	3	150.00	4
+Transporte I	5	120.00	1
+Transporte J	3	110.00	1
+Transporte C	3	120.00	1
+Transporte D	4	130.00	1
+Transporte E	3	140.00	1
+Transporte F	4	150.00	1
+Guindaste E	2	350.00	2
+Guindaste F	3	360.00	2
+Guindaste G	4	370.00	2
+Guindaste H	5	380.00	2
+Montagem G	5	210.00	3
+Montagem H	6	220.00	3
+Montagem I	6	230.00	3
+Desmontagem I	4	240.00	4
+Desmontagem J	5	250.00	4
+\.
+
+
+--
+-- TOC entry 4896 (class 0 OID 16878)
+-- Dependencies: 221
+-- Data for Name: solicitam; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.solicitam (nome, codigo, cpf, tempohoradurac, preco, datafim, cidadeorigem, cidadedestino, id_empresa) FROM stdin;
+Montagem E	2	98765432100	6	1200.00	2024-01-15	São Paulo	Rio de Janeiro	1
+Transporte A	1	12345678901	5	750.00	2024-01-10	São Paulo	Rio de Janeiro	1
+Guindaste C	1	12345678901	2	600.00	2024-01-12	Rio de Janeiro	Belo Horizonte	2
+Transporte B	4	34567890123	3	300.00	2024-01-25	Rio de Janeiro	Belo Horizonte	2
+Montagem F	6	56789012345	4	1000.00	2024-02-05	Rio de Janeiro	Belo Horizonte	2
+Desmontagem H	7	67890123456	5	1200.00	2024-02-10	São Paulo	São Paulo	1
+Montagem H	13	22334455667	5	1000.00	2024-03-10	Rio de Janeiro	Rio de Janeiro	2
+Transporte E	15	44556677889	3	500.00	2024-03-20	Rio de Janeiro	Rio de Janeiro	2
+Guindaste F	12	11223344556	3	650.00	2024-12-12	Rio de Janeiro	Rio de Janeiro	2
+Transporte C	8	78901234567	3	350.00	2024-02-15	São Paulo	Rio de Janeiro	1
+Transporte D	11	01234567890	4	600.00	2024-03-01	São Paulo	São Paulo	1
+Desmontagem I	14	33445566778	4	850.00	2024-03-15	Rio de Janeiro	Rio de Janeiro	2
+Guindaste E	9	89012345678	2	600.00	2024-02-20	Rio de Janeiro	São Paulo	2
+Guindaste E	20	12345678901	5	750.00	2024-12-12	Rio de Janeiro	São Paulo	2
+Guindaste D	5	45678901234	3	900.00	2024-02-01	Belo Horizonte	São Paulo	1
+Montagem I	17	66778899001	6	1200.00	2024-04-01	Belo Horizonte	São Paulo	1
+Desmontagem G	3	23456789012	4	1000.00	2024-01-20	Belo Horizonte	São Paulo	1
+Desmontagem J	18	77889900112	5	1100.00	2024-04-05	Belo Horizonte	Rio de Janeiro	2
+Transporte F	19	88990011223	4	450.00	2024-04-10	Belo Horizonte	Rio de Janeiro	2
+Guindaste H	20	99001122334	5	750.00	2024-04-15	Belo Horizonte	Rio de Janeiro	2
+Montagem G	10	90123456789	5	1050.00	2024-02-25	Belo Horizonte	São Paulo	1
+Guindaste G	16	55667788990	4	700.00	2024-03-25	Belo Horizonte	Rio de Janeiro	2
+Guindaste E	9	12345678901	\N	600.00	2024-02-15	São Paulo	Rio de Janeiro	2
+Guindaste E	311	99001122334	42	1555.68	2024-03-13	Fernandes das Flores	Martins	17
+Desmontagem I	136	03562497865	32	3857.07	2024-11-07	Camargo	Sao Paulo	5
+Guindaste F	123	52197046306	13	1093.25	2024-11-15	Fernandes das Flores	Belo Horizonte	9
+Montagem E	187	58904763274	47	775.39	2024-03-08	Sao Paulo	Martins	3
+Guindaste E	163	73814062922	36	295.60	2024-07-10	Camargo	Teixeira de Sá	11
+Montagem F	133	49386017296	46	2749.59	2024-04-30	Teixeira de Sá	Fernandes das Flores	3
+Transporte F	355	01234567890	13	4588.28	2024-07-07	Rio de Janeiro	Camargo	8
+Desmontagem J	283	51670392821	33	1372.40	2024-06-03	Rio de Janeiro	Souza Grande	16
+Transporte E	366	42793018678	35	3677.05	2024-08-04	Sao Paulo	Moura	12
+Transporte F	209	99001122334	11	4157.60	2024-02-04	Camargo	Rio de Janeiro	2
+Transporte B	73	25749061361	41	3870.61	2024-04-20	Fernandes das Flores	Belo Horizonte	1
+Desmontagem J	67	53908214670	21	4658.84	2024-07-29	Teixeira de Sá	Martins	8
+Montagem E	58	25749061361	32	175.44	2024-12-09	Moura	Farias	13
+Transporte D	84	51708324607	9	2838.12	2024-08-21	Belo Horizonte	Souza Grande	14
+Montagem E	40	67890123456	30	3089.06	2024-03-28	Sao Paulo	Sao Paulo	4
+Guindaste E	91	59087461267	7	3426.95	2024-12-04	Moura	Belo Horizonte	16
+Desmontagem G	129	05987326168	8	859.08	2023-12-24	Souza Grande	Sao Paulo	16
+Montagem G	288	34567890123	14	3839.02	2024-01-08	Rio de Janeiro	Sao Paulo	8
+Guindaste H	232	47936128573	33	191.44	2023-12-23	Moura	Sao Paulo	5
+Transporte A	342	51708324607	34	113.74	2024-08-24	Sao Paulo	Sao Paulo	15
+Montagem E	18	87150326986	41	3024.72	2024-07-27	Souza Grande	Farias	19
+Guindaste G	154	13782460987	13	4768.76	2024-06-22	Souza Grande	Farias	19
+Guindaste G	254	43725908656	42	4705.59	2024-10-17	São Paulo	Fernandes das Flores	19
+Montagem F	70	47936128573	9	3420.63	2024-06-09	Souza Grande	Farias	17
+Montagem H	336	91275648355	29	3105.85	2024-01-14	Belo Horizonte	Sao Paulo	1
+Transporte J	292	59641382764	22	4195.01	2024-06-30	Belo Horizonte	Fernandes das Flores	5
+Desmontagem H	65	96251370416	45	1206.32	2024-06-06	Teixeira de Sá	Fernandes das Flores	13
+Montagem F	370	49386017296	18	3194.44	2024-08-23	Farias	Martins	8
+Guindaste D	16	03578942600	5	369.00	2024-03-29	Rio de Janeiro	São Paulo	1
+Guindaste F	366	71685240380	37	1649.11	2024-04-17	Camargo	Sao Paulo	9
+Guindaste G	171	77889900112	12	2197.75	2024-03-04	Souza Grande	Moura	19
+Desmontagem H	196	87150326986	37	807.56	2024-06-14	Belo Horizonte	Moura	5
+Guindaste H	187	64102389750	24	911.61	2023-12-25	Sao Paulo	Moura	3
+Transporte F	371	59641382764	26	4261.55	2023-12-30	Teixeira de Sá	Farias	12
+Guindaste E	255	95601482730	43	3473.59	2024-02-26	Belo Horizonte	Teixeira de Sá	14
+Montagem F	373	17806943501	9	2125.16	2024-04-02	Teixeira de Sá	Belo Horizonte	11
+Transporte E	297	09843162722	46	1878.75	2024-03-30	Belo Horizonte	São Paulo	12
+Transporte I	219	69354270107	29	4728.50	2024-03-23	Camargo	Rio de Janeiro	3
+Transporte J	221	01594627380	18	1985.40	2024-06-14	Moura	Fernandes das Flores	3
+Transporte D	126	91275648355	42	4601.89	2024-01-16	Farias	Rio de Janeiro	11
+Desmontagem I	169	43725908656	36	1674.22	2024-06-15	Teixeira de Sá	Moura	13
+Transporte F	78	15094367234	7	2657.97	2024-02-03	Martins	Martins	3
+Transporte B	19	58904763274	6	1482.32	2024-05-23	Rio de Janeiro	Fernandes das Flores	4
+Desmontagem G	103	11223344556	23	2280.86	2024-01-24	Teixeira de Sá	Belo Horizonte	19
+Montagem F	93	27598304629	7	2488.94	2024-01-07	Souza Grande	Belo Horizonte	18
+Transporte I	48	14329076543	37	3317.06	2024-11-27	Farias	Farias	13
+Guindaste G	55	36845902747	43	3105.06	2023-12-30	Teixeira de Sá	Teixeira de Sá	9
+Montagem I	159	18752906485	36	992.60	2024-07-02	Martins	Camargo	1
+Desmontagem H	214	41398067296	44	3478.28	2024-12-13	Martins	Moura	4
+Guindaste F	158	90123456789	37	1725.20	2024-09-15	Sao Paulo	Belo Horizonte	3
+Transporte I	76	22334455667	33	2408.66	2024-08-05	Teixeira de Sá	Souza Grande	17
+Guindaste G	3	39521760443	2	1694.26	2023-12-18	Martins	São Paulo	11
+Desmontagem I	220	90635421860	38	2272.89	2024-08-18	Rio de Janeiro	Martins	5
+Transporte I	133	72863905112	9	3978.19	2024-05-05	Belo Horizonte	Sao Paulo	19
+Transporte B	351	54067913206	33	610.42	2024-02-15	Souza Grande	Rio de Janeiro	13
+Transporte C	129	50321768930	3	1574.21	2024-12-13	Moura	Martins	14
+Desmontagem G	349	58904763274	41	670.62	2024-07-30	Fernandes das Flores	Farias	18
+Guindaste G	279	28095173479	46	3248.34	2024-12-02	São Paulo	Martins	2
+Guindaste E	38	69534208710	2	2260.14	2024-06-24	Sao Paulo	Souza Grande	19
+Transporte E	97	23456789012	40	4786.17	2024-06-14	Souza Grande	Belo Horizonte	12
+Guindaste C	362	94502831760	39	2426.02	2024-01-31	Camargo	Camargo	3
+Guindaste E	244	59087461267	25	4890.83	2024-10-09	Souza Grande	Souza Grande	13
+Desmontagem H	67	01594627380	23	4921.52	2024-03-24	Souza Grande	Fernandes das Flores	18
+Guindaste F	53	17902834505	29	4138.98	2024-08-26	Farias	Martins	13
+Guindaste H	365	12687539040	29	4067.80	2024-07-13	Moura	Fernandes das Flores	2
+Transporte A	106	41398067296	48	2898.44	2024-09-30	Teixeira de Sá	Fernandes das Flores	8
+Montagem G	13	25749061361	48	3077.57	2024-09-05	Belo Horizonte	Teixeira de Sá	12
+Transporte C	23	41379820588	27	2380.90	2024-06-06	Martins	Farias	10
+Guindaste D	167	71685240380	29	3866.84	2024-05-01	Farias	Souza Grande	13
+Guindaste C	263	06573428153	38	3907.76	2024-11-13	Martins	Teixeira de Sá	18
+Guindaste D	131	53908214670	46	3449.85	2024-05-04	Moura	Teixeira de Sá	18
+Guindaste C	210	52197046306	13	3883.56	2024-10-27	Fernandes das Flores	Belo Horizonte	2
+Guindaste H	142	33445566778	1	4928.19	2024-08-31	Camargo	Martins	12
+Desmontagem I	265	68205413762	43	355.30	2024-01-24	Farias	Souza Grande	3
+Guindaste H	172	02718639431	2	3700.43	2024-02-01	Farias	Farias	11
+Guindaste G	278	69830174204	17	2003.72	2023-12-24	Fernandes das Flores	Moura	5
+Transporte I	257	95601482730	9	4362.33	2024-01-25	Belo Horizonte	Moura	8
+Transporte I	37	02718639431	17	502.86	2024-05-21	Belo Horizonte	Belo Horizonte	3
+Montagem F	367	52197046306	8	774.63	2024-09-21	São Paulo	Fernandes das Flores	16
+Montagem I	296	44556677889	28	4789.70	2024-02-17	Teixeira de Sá	São Paulo	18
+Transporte C	236	69354270107	37	4601.05	2024-06-09	Teixeira de Sá	Farias	16
+Desmontagem J	25	87150326986	23	1177.00	2024-12-14	Moura	Moura	4
+Desmontagem G	189	98765432100	35	3937.92	2024-10-22	São Paulo	Farias	10
+Montagem E	45	29453861006	41	410.26	2024-07-13	Belo Horizonte	Moura	1
+Transporte B	29	69534208710	18	2801.72	2023-12-24	Teixeira de Sá	São Paulo	14
+Transporte A	208	40371598214	6	4941.74	2024-01-21	Moura	Martins	9
+Montagem E	24	36845902747	13	1701.88	2024-12-14	Teixeira de Sá	Martins	11
+Desmontagem G	290	57049632180	43	2756.15	2024-08-25	Souza Grande	Teixeira de Sá	13
+Montagem H	243	91763582400	16	662.57	2024-10-25	Sao Paulo	Rio de Janeiro	5
+Montagem G	81	73690218403	30	1175.15	2024-03-20	Sao Paulo	Moura	1
+Montagem H	184	36845902747	13	2058.79	2024-02-26	Souza Grande	Teixeira de Sá	18
+Guindaste F	137	67145903261	32	2776.56	2024-11-04	Belo Horizonte	Sao Paulo	9
+Desmontagem I	249	67890123456	28	4740.64	2024-03-13	Souza Grande	Fernandes das Flores	8
+Montagem F	164	09482563115	45	3289.16	2024-10-27	Teixeira de Sá	Camargo	14
+Desmontagem I	105	78901234567	38	3585.68	2024-01-07	Martins	Souza Grande	1
+Transporte B	214	08672394178	14	3323.74	2024-06-09	Souza Grande	Belo Horizonte	18
+Desmontagem G	19	75091326499	27	2671.71	2024-08-24	Teixeira de Sá	Camargo	13
+Montagem F	145	36275019425	21	4412.05	2024-09-30	Farias	Teixeira de Sá	14
+Desmontagem G	51	46302187508	48	2087.46	2024-04-06	Martins	São Paulo	4
+Montagem F	31	83604791510	44	2523.91	2024-04-05	Fernandes das Flores	Moura	11
+Transporte E	264	60491328796	6	3352.02	2024-02-08	Rio de Janeiro	Rio de Janeiro	17
+Guindaste C	4	40672153980	21	523.99	2024-12-08	São Paulo	Moura	10
+Transporte E	278	29453861006	46	3820.86	2024-02-25	São Paulo	São Paulo	15
+Desmontagem I	40	23864175909	7	2000.38	2024-11-21	São Paulo	Camargo	19
+Desmontagem I	105	03562497865	37	1502.50	2024-07-01	Souza Grande	Souza Grande	15
+Montagem H	190	17902834505	40	3066.74	2024-03-29	Sao Paulo	Sao Paulo	10
+Transporte D	44	68205413762	48	2376.94	2024-08-05	Farias	Martins	17
+Transporte J	272	73690218403	17	1412.40	2024-07-10	Camargo	Rio de Janeiro	15
+Guindaste F	28	25013869498	40	3280.70	2024-04-23	Camargo	Teixeira de Sá	12
+Guindaste E	7	15763948246	32	851.16	2024-10-09	Martins	Camargo	5
+Transporte D	378	43725908656	6	464.62	2024-06-03	Teixeira de Sá	Belo Horizonte	12
+Montagem E	295	37650821471	41	3342.37	2024-04-01	Farias	Belo Horizonte	5
+Montagem I	285	96251370416	19	4340.17	2024-09-29	Martins	Sao Paulo	5
+Guindaste C	113	67145903261	4	701.23	2024-03-02	Teixeira de Sá	Camargo	16
+Desmontagem J	42	41398067296	10	4630.83	2024-02-19	Souza Grande	Fernandes das Flores	11
+Transporte B	370	69534208710	18	3985.23	2024-07-20	Martins	São Paulo	1
+Transporte D	315	60491328796	25	826.37	2024-08-05	Camargo	São Paulo	11
+Transporte I	111	14329076543	22	1408.34	2024-08-23	Belo Horizonte	Camargo	3
+Transporte F	60	93268104533	9	2080.78	2024-04-12	Teixeira de Sá	Souza Grande	10
+Transporte F	307	45678901234	5	4821.15	2024-07-16	Rio de Janeiro	Martins	2
+Guindaste F	79	69045823160	29	3271.01	2024-05-20	Moura	Fernandes das Flores	12
+Guindaste H	333	91275648355	26	3732.19	2024-06-06	Fernandes das Flores	Farias	10
+Desmontagem H	358	40672153980	11	1374.34	2024-02-19	São Paulo	Souza Grande	9
+Transporte D	222	86720459392	18	2046.43	2024-06-14	Farias	Teixeira de Sá	18
+Transporte J	57	69251807302	14	1578.36	2024-11-01	Sao Paulo	Martins	13
+Transporte I	63	81702456994	1	2679.44	2024-01-25	Teixeira de Sá	Fernandes das Flores	16
+Transporte C	269	63245908792	32	916.24	2024-07-21	Souza Grande	São Paulo	19
+Desmontagem I	371	25013869498	24	4054.87	2024-03-16	Belo Horizonte	Sao Paulo	18
+Transporte B	192	14329076543	21	2335.96	2024-01-22	Belo Horizonte	Martins	3
+Transporte A	379	09843162722	3	305.87	2024-11-24	Sao Paulo	São Paulo	19
+Montagem E	120	58904763274	41	2190.36	2024-07-19	Camargo	Farias	19
+Montagem H	253	12687539040	42	150.89	2024-07-23	Farias	Martins	11
+Guindaste C	30	33445566778	21	278.84	2024-09-06	São Paulo	Belo Horizonte	12
+Guindaste C	329	08672394178	32	3085.84	2023-12-30	Martins	Camargo	19
+Desmontagem H	117	96251370416	40	958.00	2024-04-18	Rio de Janeiro	Camargo	12
+Transporte E	7	25749061361	16	4975.53	2024-11-11	Souza Grande	Sao Paulo	2
+Desmontagem J	210	35129478673	39	475.22	2024-05-23	Fernandes das Flores	Sao Paulo	5
+Guindaste D	167	72863905112	32	240.38	2024-06-07	Camargo	Belo Horizonte	2
+Transporte D	86	65023871444	46	3438.57	2024-11-24	Teixeira de Sá	Moura	8
+Montagem G	141	25749061361	35	754.67	2024-01-11	Martins	Sao Paulo	9
+Montagem G	363	35129478673	34	3859.54	2024-07-23	Rio de Janeiro	Sao Paulo	5
+Transporte F	191	22334455667	16	2836.41	2024-01-16	Sao Paulo	Souza Grande	1
+Guindaste F	123	03562497865	13	2421.83	2024-08-20	Camargo	Souza Grande	19
+Desmontagem J	286	28095173479	11	1948.09	2024-08-19	Belo Horizonte	Fernandes das Flores	5
+Guindaste C	167	47531209616	43	499.34	2024-09-06	Farias	Moura	11
+Montagem I	152	95601482730	34	183.97	2024-02-27	Camargo	Martins	2
+Transporte A	91	35129478673	10	3886.83	2024-11-22	Martins	Camargo	9
+Guindaste H	359	46302187508	7	3034.39	2024-09-18	Sao Paulo	Souza Grande	17
+Montagem F	290	87264951049	39	841.77	2024-06-03	Camargo	Farias	15
+Desmontagem I	335	17902834505	14	4903.73	2024-07-26	Martins	Moura	10
+Montagem I	369	33445566778	28	1313.92	2024-01-30	Rio de Janeiro	Rio de Janeiro	10
+Guindaste H	235	98765432100	15	2757.21	2024-09-14	Camargo	São Paulo	4
+Transporte J	323	67890123456	34	2778.44	2024-05-16	Farias	Moura	1
+Montagem E	72	01594627380	47	3313.32	2024-10-30	Sao Paulo	Farias	17
+Transporte J	123	99001122334	28	3828.72	2024-07-28	Fernandes das Flores	Souza Grande	3
+Transporte B	209	73690218403	32	105.56	2024-11-07	Sao Paulo	Rio de Janeiro	18
+Guindaste D	183	15094367234	10	2016.65	2024-08-09	São Paulo	Belo Horizonte	8
+Montagem I	302	94502831760	32	2943.30	2024-11-24	Martins	Camargo	17
+Desmontagem J	100	95084231615	22	1750.27	2024-02-08	Martins	Sao Paulo	5
+Desmontagem G	351	73690218403	22	4754.20	2024-07-13	Martins	Farias	16
+Desmontagem H	143	42793018678	40	1418.49	2024-11-26	Sao Paulo	Sao Paulo	5
+Transporte I	92	09482563115	40	2826.52	2024-10-17	Fernandes das Flores	Belo Horizonte	13
+Transporte F	32	12687539040	4	736.53	2024-04-29	Fernandes das Flores	Fernandes das Flores	11
+Montagem F	121	78901234567	25	4833.05	2024-07-25	Souza Grande	São Paulo	19
+Montagem H	286	62857913419	23	4475.22	2024-08-22	Teixeira de Sá	Teixeira de Sá	5
+Guindaste H	124	98765432100	6	361.08	2024-03-05	Fernandes das Flores	Teixeira de Sá	15
+Transporte E	11	86035274900	41	2763.77	2024-12-01	Teixeira de Sá	Rio de Janeiro	12
+Montagem F	129	73814062922	7	3452.86	2024-01-02	Moura	Teixeira de Sá	3
+Transporte A	176	51670392821	43	1324.17	2024-02-06	Belo Horizonte	Camargo	8
+Guindaste D	161	23456789012	45	4870.43	2024-04-07	Rio de Janeiro	Sao Paulo	8
+Guindaste E	58	15094367234	22	1917.93	2024-05-18	São Paulo	Martins	8
+Desmontagem I	144	72863905112	28	4062.62	2024-01-09	São Paulo	São Paulo	13
+Transporte B	7	15763948246	40	3827.34	2024-09-10	Belo Horizonte	Souza Grande	10
+Transporte D	286	85637049157	48	1547.86	2024-05-01	Martins	Sao Paulo	15
+Montagem H	255	35129478673	38	827.62	2024-08-16	Rio de Janeiro	São Paulo	2
+Transporte E	179	21748560344	5	1816.70	2024-06-08	São Paulo	Souza Grande	4
+Transporte I	75	29035784600	46	2470.42	2024-08-14	Fernandes das Flores	Martins	2
+Desmontagem I	70	09843162722	39	2182.86	2024-07-02	Camargo	Camargo	12
+Desmontagem I	343	59641382764	46	4142.52	2024-10-15	Souza Grande	Sao Paulo	5
+Transporte C	24	63298475173	47	2554.86	2024-02-22	Teixeira de Sá	Teixeira de Sá	5
+Montagem G	248	37650821471	13	4941.63	2024-11-12	Souza Grande	Martins	2
+Guindaste F	142	69045823160	39	4058.33	2024-07-08	Fernandes das Flores	Teixeira de Sá	3
+Transporte E	100	78901234567	2	4096.06	2024-09-16	Fernandes das Flores	Souza Grande	3
+Transporte B	246	09274651830	48	4356.37	2023-12-27	Moura	Sao Paulo	17
+Transporte J	274	47190632506	9	4478.00	2024-06-17	São Paulo	Teixeira de Sá	18
+Transporte B	214	85637049157	41	3659.93	2024-05-06	Camargo	Camargo	2
+Desmontagem J	32	24860315707	37	3443.44	2024-12-03	Teixeira de Sá	Souza Grande	14
+Transporte A	289	27598304629	43	3368.30	2023-12-20	Teixeira de Sá	Rio de Janeiro	14
+Transporte D	219	39428517682	26	932.41	2024-10-13	Belo Horizonte	Belo Horizonte	9
+Desmontagem H	89	87264951049	39	1275.09	2024-08-11	Moura	Souza Grande	3
+Guindaste D	81	69045823160	9	4551.96	2024-01-05	Camargo	Teixeira de Sá	16
+Guindaste G	306	67890123456	26	2025.38	2024-09-08	Martins	Sao Paulo	13
+Guindaste G	173	06573428153	22	4260.82	2024-07-11	Martins	Belo Horizonte	11
+Transporte A	175	37650821471	34	2617.94	2024-12-04	Souza Grande	Camargo	11
+Guindaste F	93	41379820588	37	1136.53	2024-09-20	Souza Grande	Camargo	4
+Guindaste H	153	39521760443	9	2846.00	2024-10-27	Moura	Moura	11
+Transporte C	75	13782460987	37	1621.07	2024-03-06	Belo Horizonte	Teixeira de Sá	12
+Desmontagem I	134	18752906485	11	2412.13	2024-08-21	Farias	Teixeira de Sá	3
+Montagem G	41	63245908792	6	2170.36	2024-06-10	Moura	Camargo	11
+Desmontagem I	339	59641382764	27	2801.81	2024-12-09	Fernandes das Flores	Belo Horizonte	3
+Guindaste H	306	40672153980	11	2954.33	2024-08-16	São Paulo	São Paulo	13
+Transporte E	284	13782460987	29	4141.54	2024-01-25	Souza Grande	Belo Horizonte	4
+Desmontagem I	368	13960872577	27	2082.76	2024-06-08	Belo Horizonte	Moura	16
+Guindaste C	111	71685240380	35	406.45	2024-03-19	Teixeira de Sá	Souza Grande	15
+Desmontagem J	128	02781356417	17	4391.56	2024-06-17	São Paulo	Rio de Janeiro	10
+Desmontagem G	174	36845902747	7	3755.85	2024-05-19	Souza Grande	Teixeira de Sá	8
+Guindaste H	174	70935812423	27	2505.25	2024-11-28	Camargo	Camargo	17
+Transporte E	241	41398067296	2	1830.21	2024-04-25	Camargo	Farias	16
+Desmontagem J	88	46302187508	13	990.53	2024-10-17	Martins	Souza Grande	10
+Montagem E	167	53908214670	47	3108.33	2024-04-26	Moura	Sao Paulo	2
+Montagem F	118	68205413762	27	595.93	2024-09-24	Teixeira de Sá	Fernandes das Flores	10
+Desmontagem J	294	60491328796	19	3202.64	2024-10-21	Fernandes das Flores	Farias	2
+Montagem H	200	40519238788	42	1182.76	2024-03-11	Teixeira de Sá	Martins	4
+Transporte B	155	85637049157	5	518.58	2024-04-25	Moura	Sao Paulo	5
+Montagem H	199	69534208710	35	3336.87	2024-01-20	Sao Paulo	São Paulo	10
+Guindaste C	324	69045823160	26	380.35	2024-10-12	São Paulo	Moura	15
+Transporte F	306	51670392821	17	4273.82	2024-10-28	Farias	São Paulo	10
+Desmontagem I	213	25013869498	41	3878.74	2024-01-08	Martins	Moura	8
+Montagem I	145	09482563115	7	364.26	2024-11-11	Camargo	São Paulo	2
+Montagem F	78	96251370416	32	1198.80	2024-07-06	Sao Paulo	Martins	13
+Guindaste C	103	14329076543	9	1240.94	2024-04-06	São Paulo	Moura	15
+Transporte C	303	01594627380	39	2360.00	2024-01-09	Teixeira de Sá	Teixeira de Sá	5
+Transporte D	89	45678901234	6	604.26	2024-10-26	Rio de Janeiro	Farias	19
+Montagem E	255	96815702359	25	4249.89	2024-10-02	Rio de Janeiro	Moura	15
+Montagem G	333	98765432100	9	1644.95	2024-06-06	Rio de Janeiro	Teixeira de Sá	8
+Guindaste H	343	25749061361	12	3232.85	2024-03-02	São Paulo	Teixeira de Sá	14
+Guindaste D	358	40519238788	18	1876.15	2024-10-04	Farias	Belo Horizonte	13
+Desmontagem J	273	99001122334	38	1391.91	2024-04-01	Rio de Janeiro	Camargo	1
+Guindaste C	106	95827431664	30	561.30	2024-01-29	Martins	Camargo	1
+Transporte B	117	38260715902	9	1164.22	2024-03-18	Farias	Fernandes das Flores	16
+Guindaste F	236	12345678901	5	3826.32	2024-08-15	Belo Horizonte	Camargo	13
+Transporte J	99	51670392821	42	3851.09	2023-12-25	Camargo	Rio de Janeiro	5
+Guindaste H	264	53908214670	47	3932.27	2024-03-29	Sao Paulo	São Paulo	13
+Montagem E	48	51708324607	31	4557.76	2024-03-26	Teixeira de Sá	Belo Horizonte	2
+Montagem G	89	86720459392	10	3722.04	2024-08-31	Fernandes das Flores	Belo Horizonte	18
+Transporte I	185	62035891795	20	988.78	2024-05-04	Farias	Moura	13
+Montagem E	181	21748560344	32	3417.66	2024-11-11	Teixeira de Sá	Sao Paulo	1
+Transporte B	122	26458371071	41	4035.04	2024-12-03	Sao Paulo	Sao Paulo	19
+Transporte D	275	87150326986	37	3171.32	2024-06-27	Moura	Belo Horizonte	13
+Guindaste F	233	73690218403	46	4952.65	2024-10-25	Belo Horizonte	Moura	19
+Transporte A	273	73690218403	2	780.76	2024-06-12	Moura	Souza Grande	10
+Desmontagem G	265	71685240380	35	1301.65	2024-02-22	Fernandes das Flores	Martins	9
+Guindaste F	315	33445566778	25	246.56	2024-12-03	Fernandes das Flores	Martins	13
+Montagem F	221	42793018678	33	2386.81	2024-04-10	Teixeira de Sá	Martins	8
+Montagem I	202	75091326499	22	2151.71	2024-02-12	Teixeira de Sá	Martins	1
+Montagem G	28	03578942600	9	2125.57	2024-02-11	Teixeira de Sá	Teixeira de Sá	3
+Guindaste E	216	71685240380	46	4255.18	2024-09-06	Teixeira de Sá	Martins	4
+Transporte A	339	78901234567	44	4632.44	2024-11-01	Martins	Teixeira de Sá	18
+Guindaste H	209	14329076543	40	4137.51	2024-07-12	Rio de Janeiro	Camargo	9
+Transporte A	296	71685240380	7	4237.90	2024-08-06	Souza Grande	Farias	4
+Guindaste F	87	62035891795	44	1504.86	2024-12-01	São Paulo	Fernandes das Flores	2
+Montagem E	173	56789012345	14	1216.88	2024-04-02	Sao Paulo	Souza Grande	5
+Montagem F	315	93268104533	43	4910.80	2024-04-23	Belo Horizonte	Belo Horizonte	15
+Transporte E	42	02781356417	1	1214.15	2024-10-18	Camargo	Souza Grande	10
+Transporte A	225	95827431664	37	2537.98	2024-06-24	Teixeira de Sá	Sao Paulo	8
+Transporte E	271	52197046306	13	1924.06	2024-11-19	São Paulo	Camargo	10
+Transporte F	119	33445566778	23	2092.12	2024-11-26	Souza Grande	Rio de Janeiro	8
+Transporte E	95	91275648355	16	319.44	2024-08-09	São Paulo	São Paulo	2
+Transporte J	291	60491328796	40	3304.06	2024-01-02	Belo Horizonte	Rio de Janeiro	17
+Transporte I	371	89012345678	24	3903.07	2024-08-13	Belo Horizonte	São Paulo	3
+Guindaste C	246	41398067296	12	2816.29	2024-08-12	Farias	Fernandes das Flores	12
+Desmontagem H	369	61349820750	9	4752.84	2024-02-24	Camargo	Souza Grande	13
+Desmontagem H	16	01234567890	26	3639.74	2024-08-19	Moura	Sao Paulo	1
+Montagem H	279	79851406201	36	3909.81	2024-04-20	Fernandes das Flores	Moura	1
+Guindaste H	285	15763948246	37	4565.76	2024-10-11	Sao Paulo	Souza Grande	12
+Desmontagem J	142	28095173479	30	626.30	2024-07-01	Moura	Martins	1
+Transporte B	199	32856190740	47	1546.41	2024-09-08	Belo Horizonte	Sao Paulo	18
+Guindaste D	15	39428517682	26	3080.57	2024-03-22	Teixeira de Sá	Rio de Janeiro	3
+Transporte F	308	85637049157	48	3066.96	2024-06-05	Sao Paulo	Souza Grande	14
+Montagem E	350	33445566778	8	1672.33	2024-09-20	Souza Grande	Rio de Janeiro	9
+Transporte I	1	15763948246	9	266.92	2024-07-20	Camargo	Sao Paulo	14
+Desmontagem H	46	38260715902	8	3635.81	2024-01-20	Camargo	Fernandes das Flores	18
+Guindaste D	182	79851406201	12	748.34	2024-05-25	Souza Grande	Rio de Janeiro	16
+Guindaste E	136	24860315707	9	1571.69	2024-08-26	Sao Paulo	Souza Grande	17
+Guindaste D	168	01594627380	22	4006.48	2024-08-13	Moura	Fernandes das Flores	16
+Guindaste F	367	95827431664	45	1194.62	2024-04-11	Sao Paulo	Farias	3
+Transporte I	336	81702456994	47	1524.56	2024-04-21	Camargo	Fernandes das Flores	10
+Desmontagem J	287	03578942600	6	4397.66	2024-01-26	Sao Paulo	Moura	12
+Guindaste F	57	02781356417	26	4207.30	2024-10-26	Moura	São Paulo	1
+Montagem E	314	54067913206	47	3645.50	2024-08-08	São Paulo	Farias	3
+Guindaste C	115	65023871444	38	4161.08	2024-08-28	Camargo	Camargo	18
+Montagem G	177	06573428153	39	1647.26	2024-06-03	Moura	São Paulo	4
+Montagem G	143	69534208710	23	892.27	2024-12-14	Moura	Farias	5
+Transporte A	9	63298475173	16	1042.38	2024-01-16	Souza Grande	Belo Horizonte	17
+Montagem H	34	24860315707	22	2201.33	2024-04-20	Martins	Fernandes das Flores	2
+Transporte B	65	95601482730	44	2741.26	2024-08-10	Martins	Moura	14
+Desmontagem J	279	57049632180	31	1002.38	2024-01-24	Sao Paulo	Martins	8
+Montagem I	329	39428517682	15	2218.54	2024-06-18	Teixeira de Sá	Camargo	11
+Desmontagem H	160	87264951049	45	4674.49	2024-10-20	São Paulo	Souza Grande	17
+Transporte A	122	99001122334	20	1877.79	2024-08-10	Teixeira de Sá	Fernandes das Flores	12
+Guindaste C	13	21748560344	30	2379.14	2023-12-16	Camargo	Belo Horizonte	10
+Desmontagem H	363	36275019425	31	4319.06	2024-10-21	São Paulo	Souza Grande	17
+Montagem H	280	52197046306	28	1086.84	2024-05-02	São Paulo	Sao Paulo	11
+Guindaste C	239	27598304629	30	3630.36	2024-05-27	São Paulo	Farias	15
+Transporte B	32	62035891795	6	1349.74	2024-03-24	Martins	Fernandes das Flores	11
+Transporte D	351	41379820588	16	3883.27	2024-04-21	Moura	Farias	16
+Desmontagem J	114	69045823160	42	1548.21	2024-06-13	São Paulo	Martins	15
+Montagem I	258	49261873022	20	1939.01	2024-02-11	Sao Paulo	Teixeira de Sá	9
+Montagem G	342	40519238788	12	385.36	2024-12-15	Moura	São Paulo	5
+Guindaste D	30	23456789012	27	4585.48	2024-04-21	Sao Paulo	São Paulo	3
+Guindaste G	171	90635421860	39	785.78	2024-08-23	Camargo	Farias	18
+Montagem E	260	21748560344	42	4519.55	2024-05-04	Souza Grande	Rio de Janeiro	19
+Guindaste C	211	38260715902	27	1715.39	2024-05-15	Moura	Souza Grande	17
+Desmontagem H	217	47190632506	17	3475.39	2024-11-27	Belo Horizonte	Souza Grande	11
+Transporte F	286	13960872577	41	2071.54	2024-03-20	Fernandes das Flores	São Paulo	3
+Desmontagem G	361	51670392821	48	2534.75	2024-08-17	Belo Horizonte	Teixeira de Sá	11
+Guindaste F	248	15094367234	19	1892.84	2024-07-29	Fernandes das Flores	São Paulo	3
+Transporte A	171	94763152025	23	3687.91	2023-12-21	Martins	Camargo	4
+Transporte C	302	23864175909	30	4823.42	2024-10-19	Farias	Camargo	4
+Montagem I	179	68205413762	14	4515.06	2024-04-24	Sao Paulo	Martins	10
+Guindaste C	278	13782460987	19	3853.18	2024-11-08	Belo Horizonte	Martins	2
+Transporte F	85	64102389750	43	2593.50	2024-10-22	Fernandes das Flores	Farias	8
+Guindaste C	239	27658134007	9	2335.27	2024-09-02	Moura	Sao Paulo	16
+Montagem I	28	15763948246	7	414.93	2024-12-07	Teixeira de Sá	Fernandes das Flores	9
+Transporte I	26	59641382764	7	4239.51	2024-10-02	Moura	Martins	16
+Guindaste F	333	72863905112	33	3389.35	2024-02-21	São Paulo	Sao Paulo	9
+Desmontagem H	13	23864175909	48	3020.64	2024-10-22	Fernandes das Flores	Farias	18
+Transporte I	120	65307841957	34	2729.54	2024-06-07	Teixeira de Sá	Belo Horizonte	11
+Montagem I	171	45678901234	16	474.42	2023-12-29	Rio de Janeiro	Camargo	8
+Montagem F	244	05987326168	42	3996.82	2024-04-02	Sao Paulo	Moura	8
+Transporte E	4	79851406201	43	2099.33	2024-04-06	Teixeira de Sá	Moura	5
+Transporte B	113	25791304897	5	2822.63	2024-04-20	Martins	Sao Paulo	16
+Transporte J	334	89012345678	40	1093.48	2024-08-30	Souza Grande	São Paulo	15
+Desmontagem H	131	39521760443	46	2164.96	2024-02-01	Belo Horizonte	Martins	14
+Desmontagem I	155	55667788990	2	4809.29	2024-08-19	Rio de Janeiro	Camargo	2
+Desmontagem I	272	69135482737	27	3798.27	2024-11-06	São Paulo	São Paulo	12
+Guindaste H	310	87150326986	22	1582.42	2024-03-16	Teixeira de Sá	São Paulo	1
+Montagem I	266	14329076543	23	432.05	2024-09-28	Belo Horizonte	Fernandes das Flores	1
+Transporte E	67	69830174204	4	2173.50	2024-08-14	Farias	Souza Grande	19
+Guindaste H	26	58904763274	40	3861.12	2024-12-03	Teixeira de Sá	Souza Grande	5
+Montagem F	338	60491328796	3	4328.32	2023-12-16	Farias	Farias	18
+Transporte E	59	63298475173	45	1091.54	2024-05-31	Fernandes das Flores	Moura	9
+Transporte B	264	02718639431	14	3725.97	2024-07-15	Farias	Martins	16
+Guindaste F	13	02781356417	5	4932.65	2024-11-02	Teixeira de Sá	Moura	3
+Transporte J	41	69354270107	28	1501.61	2024-12-02	Farias	Rio de Janeiro	14
+Guindaste D	121	69354270107	44	2152.52	2024-03-07	Fernandes das Flores	São Paulo	3
+Guindaste H	244	91763582400	15	4465.18	2024-07-16	Rio de Janeiro	Farias	11
+Transporte C	303	35129478673	45	1823.65	2024-03-16	Belo Horizonte	Camargo	3
+Desmontagem H	162	69135482737	9	4756.10	2024-04-01	Rio de Janeiro	Teixeira de Sá	10
+Guindaste E	320	47531209616	34	4611.33	2024-06-17	Camargo	Farias	2
+Desmontagem I	135	90123456789	43	3915.02	2024-05-24	São Paulo	Farias	3
+Desmontagem G	293	21748560344	29	796.03	2024-05-17	Teixeira de Sá	Belo Horizonte	9
+Desmontagem I	347	59173046299	18	2726.46	2024-04-08	São Paulo	Camargo	4
+Guindaste E	321	94763152025	44	3219.20	2024-07-14	Fernandes das Flores	São Paulo	10
+Transporte F	359	22334455667	9	1063.12	2024-06-27	Martins	Teixeira de Sá	13
+Desmontagem J	354	41785203690	18	2037.21	2024-09-15	Rio de Janeiro	Rio de Janeiro	8
+Transporte D	374	60491328796	35	2276.10	2024-08-11	Martins	Camargo	8
+Transporte I	352	39428517682	2	431.95	2024-05-15	Moura	Moura	17
+Transporte F	201	69534208710	33	1582.16	2024-09-01	São Paulo	Sao Paulo	18
+\.
+
+
+--
+-- TOC entry 4906 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: funcionario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.funcionario_id_seq', 1, false);
+
+
+-- Completed on 2024-12-16 20:35:33
+
+--
+-- PostgreSQL database dump complete
+--
+
