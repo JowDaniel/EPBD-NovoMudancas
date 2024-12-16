@@ -75,15 +75,21 @@ def consulta_solicitacoes_ultimo_ano(conn):
 
 def consulta_faturamento_mensal(conn):
     ano = int(input("Digite o ano desejado: "))
+    mes = input("Digite o mes desejado (1-12) ou pressione Enter para visualizar todos os meses: ")
+
+    # Adicionar filtro de mês, se informado
+    filtro_mes = f"AND EXTRACT(MONTH FROM s.datafim) = {mes}" if mes.strip() else ""
+
     query = f"""
     SELECT e.nome AS Empresa, EXTRACT(MONTH FROM s.datafim) AS Mes, SUM(s.preco) AS Faturamento
     FROM Solicitam s
     JOIN Empresa e ON s.id_empresa = e.id
-    WHERE EXTRACT(YEAR FROM s.datafim) = {ano}
+    WHERE EXTRACT(YEAR FROM s.datafim) = {ano} {filtro_mes}
     GROUP BY e.nome, EXTRACT(MONTH FROM s.datafim)
     ORDER BY e.nome, Mes;
     """
     executar_consulta(conn, query, "Faturamento das empresas por mes no ano especificado")
+
 
 def consulta_servico_mais_solicitado(conn):
     mes = int(input("Digite o numero do mes: "))
@@ -100,13 +106,24 @@ def consulta_servico_mais_solicitado(conn):
 
 def consulta_servico_mais_solicitado_por_empresa(conn):
     query = """
-    SELECT e.nome AS Empresa, s.nome AS Servico, COUNT(s.nome) AS QuantidadeSolicitacoes
-    FROM Solicitam s
-    JOIN Empresa e ON s.id_empresa = e.id
-    GROUP BY e.nome, s.nome
-    ORDER BY e.nome, QuantidadeSolicitacoes DESC;
+    WITH ServicoRanking AS (
+        SELECT 
+            e.nome AS Empresa,
+            s.nome AS Servico,
+            COUNT(s.nome) AS QuantidadeSolicitacoes,
+            RANK() OVER (PARTITION BY e.nome ORDER BY COUNT(s.nome) DESC, s.nome ASC) AS Ranking
+        FROM Solicitam s
+        JOIN Empresa e ON s.id_empresa = e.id
+        GROUP BY e.nome, s.nome
+    )
+    SELECT Empresa, Servico, QuantidadeSolicitacoes
+    FROM ServicoRanking
+    WHERE Ranking = 1
+    ORDER BY Empresa;
     """
     executar_consulta(conn, query, "Servico mais solicitado e numero de solicitacoes por empresa")
+
+
 
 def consulta_cidade_mais_solicitacoes(conn):
     query = """
